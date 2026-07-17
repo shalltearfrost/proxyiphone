@@ -22,7 +22,12 @@ HTTP/HTTPS прокси-серверы. Трафик каждого прокси
 
 ---
 
-## 🪟 Windows — для друга (просто скачать и запустить)
+## 🪟 Windows — собрать самому
+
+Пошаговая инструкция по сборке `.exe` на Windows: **[BUILD-WINDOWS.md](BUILD-WINDOWS.md)**.
+Коротко: установить Node.js + Apple Devices, скачать репо, `npm install && npm run dist:win`.
+
+## 🪟 Windows — готовый установщик (когда собран)
 
 1. Установи **Apple Devices** из Microsoft Store (или iTunes) — нужен драйвер
    Apple, иначе Windows не увидит iPhone. Перезагрузись, если попросит.
