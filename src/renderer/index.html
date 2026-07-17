@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPhone Proxy</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">📶</span>
+        <div>
+          <h1>iPhone Proxy</h1>
+          <p class="sub">Телефоны как HTTP/HTTPS прокси</p>
+        </div>
+      </div>
+      <div class="conn-info">
+        <div class="conn-row">
+          <span class="label">Адрес для клиентов</span>
+          <code id="lan">—</code>
+        </div>
+        <div class="conn-row">
+          <span class="label">Логин</span>
+          <input id="auth-user" class="cred" spellcheck="false" />
+          <span class="label">Пароль</span>
+          <input id="auth-pass" class="cred" spellcheck="false" />
+          <button id="save-auth" class="btn small">Сохранить</button>
+        </div>
+      </div>
+    </header>
+
+    <div id="tools-banner" class="banner hidden"></div>
+
+    <main id="devices" class="devices"></main>
+
+    <div id="empty" class="empty hidden">
+      <div class="empty-card">
+        <h2>Телефоны не найдены</h2>
+        <p>Чтобы iPhone стал прокси:</p>
+        <ol>
+          <li>Подключи iPhone к компьютеру по <b>USB-кабелю</b></li>
+          <li class="win-only hidden">Windows: установи <b>Apple Devices</b> (Microsoft Store) или iTunes — нужен драйвер Apple</li>
+          <li>На телефоне включи <b>Настройки → Режим модема</b></li>
+          <li>При запросе на телефоне нажми <b>«Доверять этому компьютеру»</b></li>
+          <li>Дождись появления сетевого адаптера модема (подсеть 172.20.10.x)</li>
+        </ol>
+        <p class="hint">Список обновляется автоматически каждые несколько секунд.</p>
+      </div>
+    </div>
+
+    <footer class="statusbar">
+      <span id="tick">Ожидание устройств…</span>
+    </footer>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

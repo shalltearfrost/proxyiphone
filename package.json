@@ -1,0 +1,52 @@
+{
+  "name": "iphone-proxy",
+  "version": "0.1.0",
+  "description": "Использование iPhone (USB-модем) как HTTP/HTTPS прокси-серверов с выбором телефона, зарядом и статусом",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.local.iphoneproxy",
+    "productName": "iPhone Proxy",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "iPhone-Proxy-${version}-${arch}.${ext}",
+      "extraResources": [
+        {
+          "from": "vendor/imobiledevice/win32",
+          "to": "imobiledevice",
+          "filter": [
+            "**/*"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false
+    }
+  }
+}
