@@ -6,6 +6,9 @@ on:
       - 'v*'
   workflow_dispatch: # можно запустить вручную во вкладке Actions
 
+permissions:
+  contents: write # чтобы публиковать .exe в Releases
+
 jobs:
   build-win:
     runs-on: windows-latest
